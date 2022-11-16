@@ -39,12 +39,13 @@ DJANGO_APPS = [
 	'django.contrib.staticfiles',
 
 ]
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = ['debug_toolbar']
 LOCAL_APPS = ['book.apps.BookConfig',]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
+	'debug_toolbar.middleware.DebugToolbarMiddleware',
 	'django.middleware.security.SecurityMiddleware',
 	'django.contrib.sessions.middleware.SessionMiddleware',
 	'django.middleware.common.CommonMiddleware',
@@ -122,3 +123,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+INTERNAL_IPS = [
+	"127.0.0.1",
+]
