@@ -9,5 +9,11 @@
 </head>
 <body>
 <h1>Hello World</h1>
+<ul>
+    {% for publisher in publishers %}
+{#        <li><a href="{% url 'book_store:publisher_details' pk=publisher.id %}">{{ publisher.name }} - {{ publisher.email }}</a></li>#}
+        <li><a href="{{publisher.get_absolute_url}}"> {{ publisher.name }} - {{ publisher.email }}</a></li>
+    {% endfor %}
+</ul>
 </body>
 </html>
