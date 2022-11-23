@@ -31,7 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 DJANGO_APPS = [
-	'django.contrib.admin',
+	# 'django.contrib.admin',
+	'book_store.apps.BookStoreAdminConfig',
 	'django.contrib.auth',
 	'django.contrib.contenttypes',
 	'django.contrib.sessions',
@@ -131,3 +132,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 INTERNAL_IPS = [
 	"127.0.0.1",
 ]
+
+ADMIN_URL = "admin/"

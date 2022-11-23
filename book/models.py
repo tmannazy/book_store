@@ -39,11 +39,14 @@ class Book(models.Model):
 	authors = models.ManyToManyField("Author", related_name="books")
 
 	def __str__(self):
-		return self.title
+		return f"{self.title} ({self.price})"
 
 	def save(self, *args, **kwargs):
 		self.slug = slugify(self.title)
 		super().save(*args, **kwargs)
+
+	class Meta:
+		ordering = ["title"]
 
 
 class Author(models.Model):
